@@ -140,7 +140,7 @@ impl Iterator for Iter<'_> {
 
         Some((
             pair.key().as_str().unwrap().to_string(),
-            pair.value().as_str().unwrap().to_string(),
+            pair.value().as_str().unwrap_or_default().to_string(),
         ))
     }
 }
