@@ -216,10 +216,10 @@ pub mod prelude;
 pub mod service;
 pub mod txt_record;
 
+#[cfg(target_os = "linux")]
+pub mod avahi;
 #[cfg(any(target_vendor = "apple", target_vendor = "pc"))]
 pub mod bonjour;
-#[cfg(target_os = "linux")]
-pub mod linux;
 
 pub use browser::{ServiceDiscoveredCallback, ServiceDiscovery};
 pub use interface::*;
