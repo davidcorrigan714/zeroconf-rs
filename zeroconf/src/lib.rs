@@ -228,21 +228,21 @@ pub use service_type::*;
 
 /// Type alias for the platform-specific mDNS browser implementation
 #[cfg(target_os = "linux")]
-pub type MdnsBrowser = linux::browser::AvahiMdnsBrowser;
+pub type MdnsBrowser = avahi::browser::AvahiMdnsBrowser;
 /// Type alias for the platform-specific mDNS browser implementation
 #[cfg(any(target_vendor = "apple", target_vendor = "pc"))]
 pub type MdnsBrowser = bonjour::browser::BonjourMdnsBrowser;
 
 /// Type alias for the platform-specific mDNS service implementation
 #[cfg(target_os = "linux")]
-pub type MdnsService = linux::service::AvahiMdnsService;
+pub type MdnsService = avahi::service::AvahiMdnsService;
 /// Type alias for the platform-specific mDNS service implementation
 #[cfg(any(target_vendor = "apple", target_vendor = "pc"))]
 pub type MdnsService = bonjour::service::BonjourMdnsService;
 
 /// Type alias for the platform-specific structure responsible for polling the mDNS event loop
 #[cfg(target_os = "linux")]
-pub type EventLoop<'a> = linux::event_loop::AvahiEventLoop<'a>;
+pub type EventLoop<'a> = avahi::event_loop::AvahiEventLoop<'a>;
 /// Type alias for the platform-specific structure responsible for polling the mDNS event loop
 #[cfg(any(target_vendor = "apple", target_vendor = "pc"))]
 pub type EventLoop<'a> = bonjour::event_loop::BonjourEventLoop<'a>;
@@ -250,7 +250,7 @@ pub type EventLoop<'a> = bonjour::event_loop::BonjourEventLoop<'a>;
 /// Type alias for the platform-specific structure responsible for storing and accessing TXT
 /// record data
 #[cfg(target_os = "linux")]
-pub type TxtRecord = linux::txt_record::AvahiTxtRecord;
+pub type TxtRecord = avahi::txt_record::AvahiTxtRecord;
 /// Type alias for the platform-specific structure responsible for storing and accessing TXT
 /// record data
 #[cfg(any(target_vendor = "apple", target_vendor = "pc"))]

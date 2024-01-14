@@ -45,8 +45,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Bonjour
-        run: choco install bonjour
+      # - name: Install Bonjour
+      #  run: choco install -y bonjour
       - name: Prepare
         run: "rustup component add clippy"
       - name: Build
