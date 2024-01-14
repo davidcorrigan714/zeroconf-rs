@@ -19,7 +19,6 @@ mod tests {
     use std::ffi::CString;
     use std::ptr;
 
-    #[cfg(any(target_vendor = "apple", target_vendor = "linux"))]
     #[test]
     fn assert_not_null_non_null_success() {
         let c_str = c_string!("foo");
