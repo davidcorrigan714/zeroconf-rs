@@ -22,6 +22,7 @@ mod tests {
     #[test]
     fn assert_not_null_non_null_success() {
         let c_str = c_string!("foo");
+        #[allow(clippy::useless_ptr_null_checks)]
         assert_not_null!(c_str.as_ptr());
     }
 
