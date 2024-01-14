@@ -39,3 +39,22 @@ jobs:
         run: ./scripts/lintall.sh
       - name: Run tests
         run: cargo test --verbose
+
+  windows-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Bonjour
+        shell: pwsh
+        run: |
+          choco install bonjour
+      - name: Prepare
+        run: "rustup component add clippy"
+      - name: Build
+        run: ./scripts/buildall.sh
+      - name: Check formatting
+        run: ./scripts/checkfmt.sh
+      - name: Run clippy
+        run: ./scripts/lintall.sh
+      - name: Run tests
+        run: cargo test --verbose
