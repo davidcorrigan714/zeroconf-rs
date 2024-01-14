@@ -122,7 +122,7 @@ pub(crate) mod bonjour {
             );
         }
 
-        let mut timeout: timeval = timeval {
+        let timeout: timeval = timeval {
             tv_sec: timeout.as_secs() as ::libc::c_long,
             tv_usec: timeout.subsec_micros() as ::libc::c_long,
         };
@@ -133,7 +133,7 @@ pub(crate) mod bonjour {
         };
         set.fd_array[0] = sock_fd;
 
-        let result = select(0, &mut set, ptr::null_mut(), &mut set, &mut timeout);
+        let result = select(0, &mut set, ptr::null_mut(), &mut set, &timeout);
 
         if result < 0 {
             Err("select(): returned error status".into())

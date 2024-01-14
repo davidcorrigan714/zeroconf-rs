@@ -50,10 +50,12 @@ jobs:
       - name: Prepare
         run: "rustup component add clippy"
       - name: Build
-        run: ./scripts/buildall.sh
+        shell: pwsh
+        run: ./scripts/buildall.ps1
       - name: Check formatting
         run: ./scripts/checkfmt.sh
       - name: Run clippy
-        run: ./scripts/lintall.sh
+        shell: pwsh
+        run: ./scripts/lintall.ps1
       - name: Run tests
         run: cargo test --verbose
