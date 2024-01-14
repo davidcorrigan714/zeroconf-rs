@@ -46,9 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Bonjour
-        shell: pwsh
-        run: |
-          choco install bonjour
+        run: choco install bonjour
       - name: Prepare
         run: "rustup component add clippy"
       - name: Build
