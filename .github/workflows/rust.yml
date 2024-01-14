@@ -53,7 +53,7 @@ jobs:
         shell: pwsh
         run: ./scripts/buildall.ps1
       - name: Check formatting
-        run: ./scripts/checkfmt.sh
+        run: ./scripts/checkfmt.ps1
       - name: Run clippy
         shell: pwsh
         run: ./scripts/lintall.ps1
